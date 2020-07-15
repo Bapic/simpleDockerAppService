@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('Hi there MS team....good afternoon!');
+    res.send('Hi there Microsoft  team....good afternoon!');
 });
 
 app.listen(80, () => { console.log('Listening on port 8080') })
