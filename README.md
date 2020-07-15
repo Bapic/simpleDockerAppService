@@ -9,51 +9,51 @@
 
 ### Steps:
 
-1. Login to your Github account Fork the repo (containing the simple docker application) from the MTC Github to your github account: https://github.com/Bapic/simpleDockerAppService.git
+1. Login to your Github account Fork the repo (containing the simple docker application) to your github account: https://github.com/Bapic/simpleDockerAppService.git
 
-2. Generate a PAT for your github to use with Cloud Shell https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token and save it securely
+2. Generate a PAT for your github account to use with Cloud Shell https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token. Save it securely.
 
-3. Login to Azure portal and launch Cloud Shell 
+3. Login to your Azure portal and launch the Cloud Shell 
 
-4. Run the below commands to clone the repo locally. 
+4. Run the below commands to clone the repo locally: 
 	
-	git config --global user.email "<your email>"
+	> git config --global user.email "your email"
 	
-	git config --global user.name "your github username"
+	> git config --global user.name "your github username"
 	
-	git clone https://github.com/Bapic/simpleDockerAppService.git
+	> git clone https://github.com/Bapic/simpleDockerAppService.git
 	
-	cd simpleDockerAppService
+	> cd simpleDockerAppService
 	
-	git remote show origin or git remote -v. # Ensure your repo is set to use your repo as the origin
+	> git remote show origin or git remote -v. # Ensure your repo is set to use your repo as the origin
 	
-	git add .
+	> git add .
 	
-	git commit -m "Initial commit"
+	> git commit -m "Initial commit"
 	
-	code index.js # make some change to the text of the response body.
+	> code index.js # make some change to the text of the response body.
 	
-	git push origin master # Once done, check your git hub repo for the changes.
+	> git push origin master # Once done, check your git hub repo for the changes.
 		
 4. Run the below commands (deployment script in the making) to deploy an App service, App service plan and ACR
 
-	REGION_NAME=eastus
+	> REGION_NAME=eastus
 	
-	RESOURCE_GROUP=DockerAppServiceRG-$RANDOM
+	> RESOURCE_GROUP=DockerAppServiceRG-$RANDOM
 	
-	APP_NAME=simpleDockerAppService$RANDOM
+	> APP_NAME=simpleDockerAppService$RANDOM
 	
-	GITREPO=https://github.com/Bapic/simpleDockerAppService.git
+	> GITREPO=https://github.com/Bapic/simpleDockerAppService.git
 	
-	ACR_NAME=acr$RANDOM
+	> ACR_NAME=acr$RANDOM
 		
-	az group create --location $REGION_NAME --name $RESOURCE_GROUP
+	> az group create --location $REGION_NAME --name $RESOURCE_GROUP
 	
-	az appservice plan create --name $APP_NAME --resource-group $RESOURCE_GROUP --location $REGION_NAME --is-linux --sku S1
+	> az appservice plan create --name $APP_NAME --resource-group $RESOURCE_GROUP --location $REGION_NAME --is-linux --sku S1
 	
-	az webapp create --name $APP_NAME --plan $APP_NAME --resource-group $RESOURCE_GROUP -i nginx
+	> az webapp create --name $APP_NAME --plan $APP_NAME --resource-group $RESOURCE_GROUP -i nginx
 	
-	az acr create \
+	> az acr create \
     --resource-group $RESOURCE_GROUP \
     --location $REGION_NAME \
     --name $ACR_NAME \
