@@ -1,6 +1,6 @@
 ﻿# simpleDockerAppService
 # Overview:
-## This demo will help you to deploy a simple containerised WebApp to Azure AppService from a Azure Container Registry. 
+## These sample repo will help you to deploy a simple containerised WebApp to Azure AppService from a Azure Container Registry. 
 
 ### Pre-requisites:
 1. You already have an active Azure Subscription
