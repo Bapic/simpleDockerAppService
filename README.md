@@ -18,15 +18,23 @@
 4. Run the below commands to clone the repo locally. 
 	
 	git config --global user.email "<your email>"
-	git config --global user.name "your github username"
-	git clone https://github.com/Bapic/simpleDockerAppService.git
-	cd simpleDockerAppService
-	git remote show origin or git remote -v. # Ensure your repo is set to use your repo as the origin
-	git add .
-	git commit -m "Initial commit"
-	code index.js # make some change to the text of the response body.
-	git push origin master # Once done, check your git hub repo for the changes.
 	
+	git config --global user.name "your github username"
+	
+	git clone https://github.com/Bapic/simpleDockerAppService.git
+	
+	cd simpleDockerAppService
+	
+	git remote show origin or git remote -v. # Ensure your repo is set to use your repo as the origin
+	
+	git add .
+	
+	git commit -m "Initial commit"
+	
+	code index.js # make some change to the text of the response body.
+	
+	git push origin master # Once done, check your git hub repo for the changes.
+		
 4. Run the below commands (deployment script in the making) to deploy an App service, App service plan and ACR
 	REGION_NAME=eastus
 	RESOURCE_GROUP=DockerAppServiceRG-$RANDOM
