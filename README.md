@@ -36,12 +36,17 @@
 	git push origin master # Once done, check your git hub repo for the changes.
 		
 4. Run the below commands (deployment script in the making) to deploy an App service, App service plan and ACR
+
 	REGION_NAME=eastus
-	RESOURCE_GROUP=DockerAppServiceRG-$RANDOM
-	APP_NAME=simpleDockerAppService$RANDOM
-	GITREPO=https://github.com/Bapic/simpleDockerAppService.git
-	ACR_NAME=acr$RANDOM
 	
+	RESOURCE_GROUP=DockerAppServiceRG-$RANDOM
+	
+	APP_NAME=simpleDockerAppService$RANDOM
+	
+	GITREPO=https://github.com/Bapic/simpleDockerAppService.git
+	
+	ACR_NAME=acr$RANDOM
+		
 	az group create --location $REGION_NAME --name $RESOURCE_GROUP
 	
 	az appservice plan create --name $APP_NAME --resource-group $RESOURCE_GROUP --location $REGION_NAME --is-linux --sku S1
